@@ -21,7 +21,7 @@ export default function EditPost() {
   useEffect(() => {
     if (id) {
       fetch(`${PORT}/${id}`)
-        .then(response => {console.log(response) /*response.json()*/})
+        .then(response => response.json())
         .then(data => {
           setTitle(data.post.title);
           setContent(data.post.content);
