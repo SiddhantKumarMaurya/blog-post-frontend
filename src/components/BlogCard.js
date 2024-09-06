@@ -17,7 +17,7 @@ import {
 export default function BlogCard({ post, onDelete }) {
   return (
     <div className="m-6">
-      <Card className="flex flex-col h-[250px] w-[375px] mb-6 p-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-white rounded-lg">
+      <Card className="flex flex-col h-[250px] w-[360px] mb-6 p-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-white rounded-lg">
         <CardHeader>
           <CardTitle className="text-xl font-semibold text-gray-900 truncate">{post.title}</CardTitle>
         </CardHeader>
