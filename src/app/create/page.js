@@ -8,6 +8,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useToast } from "@/hooks/use-toast";
 
+const PORT = "https://blog-post-backend-xgbl.onrender.com"
+
 export default function CreatePost() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -24,7 +26,7 @@ export default function CreatePost() {
       });
       return;
     }
-    fetch('http://localhost:5000/posts', {
+    fetch(`${PORT}/posts`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
