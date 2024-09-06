@@ -8,8 +8,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useToast } from "@/hooks/use-toast";
 
-const PORT = "https://blog-post-backend-xgbl.onrender.com" || "http://localhost:5000"
-
 export default function EditPost() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -20,7 +18,7 @@ export default function EditPost() {
 
   useEffect(() => {
     if (id) {
-      fetch(`${PORT}/${id}`)
+      fetch(`http://localhost:5000/posts/${id}`)
         .then(response => response.json())
         .then(data => {
           setTitle(data.post.title);
@@ -40,7 +38,7 @@ export default function EditPost() {
       });
       return;
     }
-    fetch(`${PORT}/posts/${id}`, {
+    fetch(`http://localhost:5000/posts/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

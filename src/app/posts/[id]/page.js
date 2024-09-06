@@ -1,13 +1,9 @@
-// src/app/posts/[id]/page.js
-
 "use client";
 
 import { useState, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import Header from '../../../components/Header';
 import { Button } from '@/components/ui/button';
-
-const PORT = "https://blog-post-backend-xgbl.onrender.com" || "http://localhost:5000"
 
 export default function ViewPost() {
     const [post, setPost] = useState(null);
@@ -18,7 +14,7 @@ export default function ViewPost() {
     
     // Fetch all posts to find next/previous posts
     useEffect(() => {
-        fetch(`${PORT}/posts`)
+        fetch('http://localhost:5000/posts')
             .then(response => response.json())
             .then(data => setAllPosts(data.posts))
             .catch(err => console.error('Error fetching all posts:', err));
@@ -26,7 +22,7 @@ export default function ViewPost() {
 
     // Fetch individual post based on current ID
     useEffect(() => {
-        fetch(`${PORT}/posts/${id}`)
+        fetch(`http://localhost:5000/posts/${id}`)
             .then(response => response.json())
             .then(data => setPost(data.post))
             .catch(err => console.error('Error fetching post:', err));

@@ -1,4 +1,4 @@
-/* src/app/styles/globals.css */
+/* src/app/ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -88,10 +88,9 @@
   }
 }
 
-/* styles/globals.css
+/* styles/globals.css */
  body {
   font-family: 'Red Hat Display', sans-serif;
 } 
-*/
 
 
