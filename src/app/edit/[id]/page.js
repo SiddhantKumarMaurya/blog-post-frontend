@@ -8,7 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { useToast } from "@/hooks/use-toast";
 
-const PORT = "https://blog-post-backend-xgbl.onrender.com" || "http://localhost:5000"
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
 export default function EditPost() {
   const [title, setTitle] = useState('');
