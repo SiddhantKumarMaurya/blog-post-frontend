@@ -6,13 +6,15 @@ import BlogCard from '../components/BlogCard';
 import { useToast } from "@/hooks/use-toast";
 import { Button } from '@/components/ui/button';
 
+const PORT = "https://blog-post-backend-xgbl.onrender.com"
+
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true); // New loading state
   const { toast } = useToast();
 
   useEffect(() => {
-    fetch('http://localhost:5000/posts')
+    fetch(`${PORT}/posts`)
       .then(response => response.json())
       .then(data => {
         setPosts(data.posts);
@@ -25,7 +27,7 @@ export default function Home() {
   }, []);
 
   const deletePost = (id) => {
-    fetch(`http://localhost:5000/posts/${id}`, {
+    fetch(`${PORT}/posts/${id}`, {
       method: 'DELETE',
     })
       .then(response => response.json())
